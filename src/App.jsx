@@ -5,14 +5,16 @@ import { Button } from "./components/Button";
 function App() {
 
   const [fields, setFields] = useState({
-    titulo: "o titulo do filme",
+    titulo: '',
     sinopse: "sinopse do filme",
     votos: "0000",
   });
+
   const adicionar = (event) => {
     event.preventDefault();
     console.log("Filme adicionado", fields);
   };
+
   const atualizaInput = (event) => {
     console.log("teste: ", event.target.id);
 
@@ -37,7 +39,10 @@ function App() {
 
         {/* TÍTULO DO FILME */}
         <form className="row g-3">
-          <InputForm nome='Título' widh={10} change={atualizaInput}/>
+          <InputForm nome='Título' 
+                      widh={10} 
+                      change={atualizaInput} 
+                      value = {fields.titulo}/>
           <InputForm nome='Gênero' widh={2}/>
           <InputForm nome='Diretor' widh={6}/>
           <InputForm nome='Sinopse' widh={2}/>

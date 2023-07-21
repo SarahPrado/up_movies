@@ -8,20 +8,19 @@ export const InputForm = (props) => {
           
   let atualizaInput = props.change
 
-
   console.log(props);
   
   return (
     <div className={`col-md-${props.width}`}>
-      <label htmlFor="genero" className="form-label">
+      <label htmlFor={nomeLabel} className="form-label">
         {props.nome}
       </label>
       <input
-        id="genero"
+        id={nomeLabel}
         type="text"
         className="form-control"
-        // value={fields.genero}
-        onChange={atualizaInput}
+        value={props.value}
+        onChange={props.change}
       />
     </div>
   );
